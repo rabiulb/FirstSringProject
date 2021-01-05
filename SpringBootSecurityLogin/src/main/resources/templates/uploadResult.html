@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+   <head>
+      <meta charset="UTF-8">
+      <title>Upload Result</title>
+   </head>
+    
+   <body>
+     
+       
+      Description: <span th:utext="${description}"></span>
+      <br/>
+      <h3>Uploaded Files:</h3>
+        <img th:src="@{/home/brainium/eclipse-workspace/springboot-thymeleaf/src/main/resources/images/85e1ac812468299c9b23736d10d2f2e3.jpg}"/>
+      <ul th:each="file : ${uploadedFiles}">
+      
+         <li th:utext="${file}"></li>  
+      </ul>      
+       
+      <h3>Failed:</h3>
+      <ul th:each="file : ${failedFiles}">
+         <li style="color:red;" th:utext="${file}"></li>  
+      </ul>
+       
+   </body>
+    
+</html>
